@@ -27,8 +27,8 @@ public
             {"a. Elon Musk", "b. Jeff Bezos", "c. Mark Elliot Zuckerberg", "d. Brian Kleinberg"}};
 
         String answers[] = {"d", "b", "c", "a", "d"};
-        int[] score = {0};
-        boolean[] isTimeUp = {false};
+        int score = 0;
+        
 
         System.out.printf("\t\t\t\t\t\t\tWELCOME TO QUIZ GAME!!!" + "\nRULES:" + "\nYou have 10 seconds to answer each question." + "\nTo move to next question input mustbe provided" + "\nbut if input is given after 10 seconds it will not affect the score\n\n"
 
@@ -36,7 +36,7 @@ public
 
         scanner.nextLine();
 
-        Thread quiz = new Thread(()->{
+      
             for (int i = 0; i < 5; i++)
             {
 
@@ -56,35 +56,30 @@ public
                 if (Time >= 10)
                 {
                     System.out.println("Time's up for this question!");
-                    isTimeUp[0] = true;
+                    
                 }
                 else
                 {
                     if (ans.equals(answers[i]))
                     {
                         System.out.printf("\nCorrect...\n\n");
-                        score[0]++;
+                        score++;
+                        continue;
+                    }
+                    if (!ans.equals("a") && !ans.equals("b") && !ans.equals("c") && !ans.equals("d")) {
+                    	System.out.println("invalid option");
                     }
                     else
                     {
-                        System.out.printf("\nInvalid answer\n\n");
+                        System.out.printf("\nwrong answer!\n\n");
+                        System.out.printf("\n correct answer is %s\n\n",answers[i]);
                     }
                 }
             }
-        });
+        
 
-        quiz.start();
 
-        try
-        {
-            quiz.join();
-        }
-        catch (InterruptedException e)
-        {
-            e.printStackTrace();
-        }
-
-        System.out.printf("\nYOUR SCORE IS: %d/5\n", score[0]);
+        System.out.printf("\nYOUR SCORE IS: %d/5\n", score);
         scanner.close();
     }
 }
