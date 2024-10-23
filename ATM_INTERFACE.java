@@ -18,7 +18,7 @@ public void Menu() {
     System.out.println("4. Exit");
     System.out.print("Select an option: ");
 }
-
+		
 public void Balance() {
     System.out.printf("Your current balance is: %.2f rs\n", balance);
 }

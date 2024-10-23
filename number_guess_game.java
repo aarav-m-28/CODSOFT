@@ -20,7 +20,7 @@ public
             int guesses = 0;
             int number = rand.nextInt(100) + 1;
             int guess = 0;
-            int score = 10;
+            int score = 11;
 
             System.out.println("\t\t\t\t\t\t\t\tWELLCOME TO NUMBER GUESSING GAME\ntry to guess the number between 1-100, you only have 10 attempts\n");
 
@@ -61,6 +61,7 @@ public
 
             if (guesses == 10 && guess != number)
             {
+            	score=0;
                 System.out.println("you ran out of attempts\nthe number was:" + number);
             }
             System.out.println("your score is" + score + "/10");

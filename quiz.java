@@ -30,9 +30,13 @@ public
         int score = 0;
         
 
-        System.out.printf("\t\t\t\t\t\t\tWELCOME TO QUIZ GAME!!!" + "\nRULES:" + "\nYou have 10 seconds to answer each question." + "\nTo move to next question input mustbe provided" + "\nbut if input is given after 10 seconds it will not affect the score\n\n"
-
-                          + "\n \t\t\t\t\t\t\tPress enter to start!");
+        System.out.printf("\t\t\t\t\t\t\tWELCOME TO QUIZ GAME!!!" 
+        		+ "\nRULES:" + 
+        		"\nYou have 10 seconds to answer each question." + 
+        		"\nTo move to next question input mustbe provided "
+        		+ "/n if the input provided is invalid thw answer will be marked as incorrect." 
+        		+ "\nbut if input is given after 10 seconds it will not affect the score\n\n"
+        		+ "\n \t\t\t\t\t\t\tPress enter to start!");
 
         scanner.nextLine();
 
@@ -66,13 +70,13 @@ public
                         score++;
                         continue;
                     }
-                    if (!ans.equals("a") && !ans.equals("b") && !ans.equals("c") && !ans.equals("d")) {
+                    else if (!ans.equals("a") && !ans.equals("b") && !ans.equals("c") && !ans.equals("d")) {
                     	System.out.println("invalid option");
                     }
                     else
                     {
-                        System.out.printf("\nwrong answer!\n\n");
-                        System.out.printf("\n correct answer is %s\n\n",answers[i]);
+                        System.out.printf("\nwrong answer!\n");
+                        System.out.printf("correct answer is %s\n\n",answers[i]);
                     }
                 }
             }
